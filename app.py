@@ -138,10 +138,6 @@ if estado_selecionado is not NULL:
 	# dataframe de casos de óbitos na cidade filtrada
 	df_cidade_obitos = df_cidade[['date', 'deaths']]
 
-	
-#def line_plot(self, col_y,col_x,hue=None, group=None):
-#        return px.line(self.df, x=col_x, y=col_y,color=hue, line_group=group)
-
 
 	# plot dos gráficos de quantidade de confirmados e óbitos por dia 
 	# na cidade filtrada
