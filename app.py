@@ -27,8 +27,8 @@ data = load_data()
 data_load_state.text('Carregando dados... Pronto!')
 
 
-#st.subheader('Dados')
-#st.write(data)
+st.subheader('Dados Utilizados na análise')
+st.write(data)
 
 
 # Select de ESTADOS
