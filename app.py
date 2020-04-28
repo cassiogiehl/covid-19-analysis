@@ -11,11 +11,12 @@ DATA_URL = 'https://brasil.io/dataset/covid19/caso?format=csv'
 NULL = '---'
 
 
-# @st.cache
 def load_data():
     data = pd.read_csv(DATA_URL)
     data = data.loc[data.place_type == 'city']
     return data
+
+# page = st.sidebar.selectbox("Escolha uma opção:", ['Cidades', 'Opção 2', 'Opção 3'])
 
 # Cria um elemento na tela
 data_load_state = st.text('Carregando dados...')
