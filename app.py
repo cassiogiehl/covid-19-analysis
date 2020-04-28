@@ -134,19 +134,19 @@ if estado_selecionado is not NULL:
 
 	# dataframe de casos confirmados na cidade filtrada
 	df_cidade_confirmados = df_cidade[['date', 'confirmed']]
-	df_cidade_confirmados.columns = ['Data', cidade_selecionada]
+	df_cidade_confirmados.columns = ['data', f'qtd casos confirmados {cidade_selecionada}']
 
 	# dataframe de casos de óbitos na cidade filtrada
 	df_cidade_obitos = df_cidade[['date', 'deaths']]
-	df_cidade_obitos.columns = ['Data', cidade_selecionada]
+	df_cidade_obitos.columns = ['data', f'qtd de óbitos {cidade_selecionada}']
 
 
 	# plot dos gráficos de quantidade de confirmados e óbitos por dia 
 	# na cidade filtrada
 	if cidade_selecionada is not NULL:
 
-		fig = px.line(df_cidade_confirmados, x='Data', y=cidade_selecionada)
+		fig = px.line(df_cidade_confirmados, x='data', y=f'qtd casos confirmados {cidade_selecionada}', title=f'Casos confirmados em {cidade_selecionada}')
 		fig
 
-		fig = px.line(df_cidade_obitos, x='Data', y=cidade_selecionada)
+		fig = px.line(df_cidade_obitos, x='data', y=f'qtd de óbitos {cidade_selecionada}', title=f'Casos de óbitos em {cidade_selecionada}')
 		fig
